@@ -1,0 +1,27 @@
+--Create a shoe store database
+
+CREATE TABLE shoes 
+(id INTEGER PRIMARY KEY, name TEXT, in_stock INTEGER, shoe_size INTEGER, price INTEGER);
+
+INSERT INTO shoes VALUES
+(1, "Reebok", 10, 8, 20),
+(2, "Nike", 27, 10, 59),
+(3, "Adidas", 38, 12, 14),
+(4, "Deckers Brands", 12, 7, 34),
+(5, "On Holding", 34, 5, 5),
+(6, "Puma", 34, 4, 3),
+(7, "Crocs", 34, 8, 20),
+(8, "Skechers", 43, 9, 39),
+(9, "Under Armor", 23, 5, 48),
+(10, "Fila", 21, 6, 5),
+(11, "New Balance", 23, 8, 32),
+(12, "Burberry", 23, 2, 43),
+(13, "Vans", 23, 4, 56),
+(14, "Converse", 34, 4, 74),
+(15, "ASICS", 43, 8, 43);
+
+--display the database ordered by price.
+SELECT * FROM shoes ORDER BY price ASC;
+
+--what is the sum of in stock shoes? 
+Select SUM(in_stock) FROM shoes;
