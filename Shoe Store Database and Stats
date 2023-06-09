@@ -1,4 +1,4 @@
---Create a grocery store database
+--Create a shoe store database
 
 CREATE TABLE store (id INTEGER PRIMARY KEY, shoe_brand TEXT, shoe_type TEXT, price INTEGER, popularity INTEGER);
 
