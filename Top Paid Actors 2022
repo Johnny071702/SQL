@@ -1,0 +1,103 @@
+CREATE TABLE top_paid_actors_2022 
+(rank INTEGER PRIMARY KEY,
+fullname TEXT);
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Tom Cruise");
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Will Smith");
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Leonardo DiCaprio");
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Brad Pitt");
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Dwayne Johnson");
+
+INSERT INTO top_paid_actors_2022
+(fullname)
+VALUES ("Will Ferrell");
+
+CREATE TABLE salary_2022 
+(id INTEGER PRIMARY KEY,
+rank_id INTEGER,
+earned TEXT);
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (6, "20 million");
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (5, "22.5 million");
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (4, "30 million");
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (3, "30 million");
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (2, "34 million");
+
+INSERT INTO salary_2022
+(rank_id, earned)
+VALUES (1, "100 million");
+
+
+CREATE TABLE movie_2022
+(id INTEGER PRIMARY KEY,
+rank_id INTEGER,
+name TEXT);
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (1, "Top Gun: Maverick");
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (2, "Emancipation");
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (3, "Killers of the Flower Moon");
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (4, "TBC");
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (5, "Black Adam");
+
+INSERT INTO movie_2022
+(rank_id, name)
+VALUES (6, "Spirited");
+
+SELECT * FROM top_paid_actors_2022;
+
+SELECT t.rank, t.fullname, m.name FROM top_paid_actors_2022 t
+JOIN movie_2022 m
+ON t.rank = m.rank_id;
+
+SELECT t.rank, t.fullname, s.earned FROM top_paid_actors_2022 t
+JOIN salary_2022 s
+ON t.rank = s.rank_id
+ORDER BY t.rank;
+
+SELECT t.rank, t.fullname, m.name, s.earned FROM top_paid_actors_2022 t
+JOIN movie_2022 m
+ON t.rank = m.rank_id
+JOIN salary_2022 s
+ON t.rank = s.rank_id;
